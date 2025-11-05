@@ -5,6 +5,7 @@
 # Ignore large video files
 /media/*.mkv
 /media/*.mp4
+/media/*.webp
 
 # Ignore temporary files
 *.log
