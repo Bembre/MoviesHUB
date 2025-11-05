@@ -1,0 +1,35 @@
+# =========================
+# Node & PHP Project Git Ignore
+# =========================
+
+# Ignore large video files
+/media/*.mkv
+/media/*.mp4
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore OS-specific folders
+__MACOSX/
+
+# Ignore XAMPP or cache folders
+cache/
+temp/
+
+# Ignore environment or credentials
+.env
+
+# Ignore vendor folder if using Composer
+/vendor/
+
+# Ignore node modules (if any frontend tools are used)
+node_modules/
