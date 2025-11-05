@@ -1,0 +1,652 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+.body {
+    width: 90%;
+    position: relative;
+    top: 10px;
+    left: 100px;
+}
+
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    padding: 20px 10px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .logo {
+    opacity: 1;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    list-style: none;
+    padding: 12px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.sidebar li:hover {
+    font-size: large;
+    font-weight: 600;
+}
+
+.sidebar li span {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover li span {
+    opacity: 1;
+}
+
+.sidebar li.logout:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-radius: 8px;
+}
+
+.sidebar li.logout a {
+    color: #ff6b6b;
+}
+
+
+/* dashboard.php */
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+}
+
+.first h1 {
+    margin: 0;
+}
+
+.first button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+}
+
+.secound {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.count,
+.comments {
+    flex: 1 1 50%;
+}
+
+.secound .count,
+.secound .comments {
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #333;
+}
+
+.third table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: none;
+}
+
+.third table th,
+.third table td {
+    text-align: left;
+    padding: 8px;
+    border: none;
+}
+
+.third table th {
+    font-weight: bold;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+table,
+tr {
+    border-bottom: 1px solid white;
+}
+
+.first {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #cbfc01;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.secound {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 50px;
+}
+
+.secound>div {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 15px;
+    background-color: rgb(57, 54, 54);
+}
+
+.third {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    width: 92%;
+    margin: 20px 50px;
+}
+.third>div {
+    background-color: rgb(57, 54, 54);
+    border-radius: 10px;
+    padding: 10px;
+     flex: 1 1 calc(50% - 20px);
+}
+
+/* dashboard.php end */
+
+
+/* details.php */
+
+.hero {
+    height: 482px;
+    z-index: -1;
+    background: url("/movies/media/<?php echo $row['cover']; ?>") no-repeat center center/cover;
+    padding-top: 150px;
+    padding-left: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.basic_info {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.basic_info li {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.genre {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 3px 8px;
+    border-right: 2px solid white;
+}
+
+button {
+    background-color: #cbfc01;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(7, 175, 231, 0.7);
+}
+
+/* Screenshots Section: 2 per row */
+.screen_shot {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.screen_shot img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.screen_shot img:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 15px #07afe7;
+}
+
+/* Modal Video Player */
+#videoPlayer {
+    max-height: 80vh;
+    border-radius: 10px;
+    background-color: black;
+}
+
+/* details.php end */
+
+
+
+/* login.php */
+.card {
+    background-color: rgb(57, 54, 54);
+    margin: 110px auto;
+    width: 400px;
+    height: 350px;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+input {
+    width: 80%;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type='submit'] {
+    background-color: #cbfc01;
+    color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+input:required {
+    border-left: 2px solid red;
+}
+
+/* Enhanced form styling */
+.card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+input[type='submit'] {
+    background-color: #cbfc01;
+    color: black;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+input[type='submit']:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* login.php end */
+
+
+/* profile.php */
+.header {
+    height: 65vh;
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.login input {
+    flex: 1;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    background-color: #cbfc01;
+    color: black;
+    border: none;
+    font-size: 1rem;
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.trending {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+/* profile.php end */
+
+
+
+
+/* search.php */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(57, 54, 54);
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar i {
+    margin-right: 10px;
+    color: #bbb;
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.trending {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sidebar li.logout:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-radius: 8px;
+}
+
+.sidebar li.logout a {
+    color: #ff6b6b;
+}
+
+/* search.php ends */
+
+
+
+
+
+/* signup.php */
+
+.card {
+    background-color: rgb(57, 54, 54);
+    margin: 110px auto;
+    width: 400px;
+    height: 450px;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+input {
+    width: 80%;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type='submit'] {
+    background-color: #cbfc01;
+    color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+input:required {
+    border-left: 2px solid red;
+}
+
+/* signup.php ends */
+
+
+/* add.php */
+input {
+    height: 60px;
+    border: none;
+    background-color: rgb(57, 54, 54);
+    color: white;
+    border-radius: 10px;
+    display: block;
+    padding: 10px;
+    margin: 15px 10px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #cbfc01;
+}
+
+textarea {
+    border: none;
+    background-color: rgb(57, 54, 54);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #cbfc01;
+}
+
+.Genre {
+    display: flex;
+}
+
+.ss {
+    display: flex;
+    gap: 10px;
+}
+
+.main {
+    justify-content: center;
+}
+
+.one_frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.left {
+    flex: 1;
+    max-width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16.5px;
+}
+
+.left_con {
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #2e2d2d;
+    padding: 12px;
+}
+
+.left_con span {
+    color: white;
+    display: block;
+    margin-bottom: 6px;
+    /* ✅ tighter spacing */
+}
+
+.left_con img {
+    max-width: 100%;
+    max-height: 180px;
+    border-radius: 10px;
+    object-fit: contain;
+    display: none;
+    margin-bottom: 8px;
+}
+
+input[type="file"] {
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.right {
+    flex: 2;
+    width: 60%;
+}
+
+.right>input {
+    width: 98%;
+}
+
+.Genre>input {
+    width: 100%;
+}
+
+.bottom>span {
+    margin: 10px;
+    color: white;
+}
+
+.bottom {
+    align-content: center;
+    margin-top: 20px;
+}
+
+
+/* add.php ends */
+
+
+
+footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    background: #111;
+    color: #ccc;
+    padding: 40px 20px;
+}
+
+.footer_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-evenly; 
+}
+.footer_container > div {
+    flex: 1 1 30%;
+    min-width: 260px;
+    box-sizing: border-box;
+}
+.about_website {
+    width: 373px;
+}
+.quick_links {
+    max-width: 30px;
+}
+.contact_info {
+    width: 260px;
+}
